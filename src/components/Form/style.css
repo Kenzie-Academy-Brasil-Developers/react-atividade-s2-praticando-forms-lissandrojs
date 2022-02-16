@@ -1,3 +1,6 @@
+h1{
+    color: #171b34;;
+}
 .container--form{
     display: flex;
     flex-direction: column;

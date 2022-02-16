@@ -1,15 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import Form from './components/Form';
-
+import Home from './components/Home';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Form>
-          
+       
+        <Form>   
         </Form>
+       
       </header>
     </div>
   );

@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form"
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { toast,ToastContainer } from "react-toastify";
+import Home from "../Home";
 import db from "../../mock";
 import './style.css'
+
 const Form =()=>{
     const formSchema = yup.object().shape({
         userName : yup.string().required("Nome de usuario e obrigatorio com ate 18 caracteres").max(18,"Ate 18 caracters"),
@@ -20,9 +21,12 @@ const Form =()=>{
         resolver:yupResolver(formSchema),
     })
     const onSubmitForm = (data)=>  db.push(data)
-    console.log(db)
+    
    
     return (
+        <div>
+
+        
         <div className="container--main">
             <h2>Cadastro de usuario</h2>
             <form className="container--form" onSubmit={handleSubmit(onSubmitForm)}>
@@ -65,12 +69,20 @@ const Form =()=>{
                 </div>
                 <button type="click">Cadastrar</button>
                 <div>
-                    <a href="/">Ja possui uma conta ?</a>
+                    <a href="./../Home">Ja possui uma conta ?</a>
 
                 </div>
             </form>
 
+          
 
+          
+        </div>
+        <h1>
+            Usuarios Cadastrados
+        </h1>
+        <Home db={db}>
+        </Home>
         </div>
     )
 }
